@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>MadLibs Assignment</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <h1>Story</h1>
+        <form name="myForm" method="get" id="myForm">
+            <label for="name">Enter a name:</label>
+            <input type="text" id="name" name="name">
+            <p></p>
+            
+            <label for="job">Enter a job:</label>
+            <input type="text" id="job" name="job">
+            <p></p>
+            
+            <label for="carColor">They bought a:</label>
+            <select id="carColor" name="carColor">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="gray">Gray</option>
+            </select>
+            <label for="car"></label>
+            <select id="car" name="car">
+            <option value="Jeep">Jeep Wrangler</option>
+            <option value="F-150">Ford F-150</option>
+            <option value="Challenger">Dodge Challenger</option>
+            </select><br>
+            <p></p>
+            
+            <label for="loc">Enter a destination:</label>
+            <input type="text" id="loc" name="loc">
+            <p></p>
+            
+            <label for="sce">What did they do in the city?</label>
+            <input type="textarea" id="sce" name="sce">
+            <p></p>
+            
+            <input type="submit" value="Show Story">
+        
+        </form>
+        <div id="formContents"></div>
+        <script>
+        var form = document.getElementById("myForm");
+        
+        form.addEventListener("submit",function(event){
+         event.preventDefault();
+         var name = document.getElementById("name").value;
+         var carColor = document.getElementById("carColor").value;
+         var car = document.getElementById("car").value;
+         var job = document.getElementById("job").value;
+         var loc = document.getElementById("loc").value;
+         var sce = document.getElementById("sce").value;
+         
+         
+         
+         
+         var putStory = document.getElementById("formContents");
+       
+         putStory.innerHTML = "There once was a person named " + name + ". They worked at "+ job + " ." + " One day, " + name + " bought a " + carColor + " " + car + " They decided to drive to " + loc + " .  " + sce + " . The end!!!";
+        });
+        
+        </script>
+        
+        
+    </body>
+
+</html>
